@@ -2,6 +2,7 @@ const express = require('express');
 const { default: mongoose } = require('mongoose');
 const app = express();
 const dotenv = require('dotenv');
+const userRoute = require('./routes/user');
 
 dotenv.config();
 
@@ -12,9 +13,7 @@ mongoose
 		console.log(err);
 	});
 
-app.get('/api/test', () => {
-	console.log('test is success');
-});
+app.use('/api/user', userRoute);
 
 app.listen(process.env.PORT || 5000, () => {
 	console.log(`server running 5000`);
