@@ -2,8 +2,9 @@ const express = require('express');
 const { default: mongoose } = require('mongoose');
 const app = express();
 const dotenv = require('dotenv');
-const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
+const userRoute = require('./routes/user');
+
 
 dotenv.config();
 
