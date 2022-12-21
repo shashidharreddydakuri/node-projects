@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -47,4 +47,4 @@ app.get('/data', checkToken, (req, res) => {
 	res.status(200).json({ data: filtered });
 });
 
-app.listen(port, () => console.log('server is running on leet'));
+app.listen(port, () => console.log(`server is running on ${port}`));
