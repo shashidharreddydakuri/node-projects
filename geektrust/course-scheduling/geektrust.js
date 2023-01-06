@@ -1,8 +1,8 @@
-const fs = require("fs")
-const { addCourse } = require("./addCourse");
+const fs = require('fs');
+const { addCourse } = require('./addCourse');
 const { courseAlloted } = require('./alloate');
-const { registerCourse } = require("./register");
-const filename = process.argv[2]
+const { registerCourse } = require('./register');
+const filename = process.argv[2];
 
 global.courseList = [];
 global.registerEmp = [];
@@ -14,9 +14,9 @@ function main(dataInput) {
 			switch (input[0]) {
 				case 'CANCEL':
 					let str = `${input[1]} CANCEL_ACCEPTED`;
-					for (k = 0; k < registerEmp.length; k++) {
-						if (registerEmp[k].course == input[1].trim()) {
-							registerEmp[k].status = false;
+					for (j = 0; j < registerEmp.length; j++) {
+						if (registerEmp[j].course == input[1].trim()) {
+							registerEmp[j].status = false;
 						}
 					}
 					console.log(str);
