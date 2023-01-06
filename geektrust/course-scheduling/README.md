@@ -1,3 +1,8 @@
+# run.bat file not working
+* NodeJs 16.17.1
+* npm install
+* npm start --silent sample_input\input1.txt
+
 # Pre-requisites
 * NodeJS 12.6.0/14.15.4/16.10.0
 * npm
