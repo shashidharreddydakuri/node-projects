@@ -8,8 +8,8 @@ const addCourse = (
 	status
 ) => {
 	if (!courseName || !instructor || !date || !minEmp || !maxEmp) {
-		console.log('input_data_error');
-		return 'input_data_error';
+		console.log('INPUT_DATA_ERROR');
+		return 'INPUT_DATA_ERROR';
 	}
 	var milliseconds = new Date().getTime();
 	let obj = {
@@ -18,13 +18,12 @@ const addCourse = (
 		date,
 		minEmp,
 		maxEmp,
-		cId: 'offering--' + courseName + '-' + instructor,
+		cId: 'OFFERING-' + courseName + '-' + instructor,
 		timestamp: milliseconds,
 		id: num,
 		status: true,
 	};
 	courseList.push(obj);
-	return 'offering--' + courseName + '-' + instructor;
+	return 'OFFERING-' + courseName + '-' + instructor;
 };
-
-module.export = { addCourse };
+module.exports = { addCourse };
