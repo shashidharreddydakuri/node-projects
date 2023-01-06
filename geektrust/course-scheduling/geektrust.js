@@ -8,15 +8,15 @@ global.courseList = [];
 global.registerEmp = [];
 function main(dataInput) {
 	var inputLines = dataInput.toString().split('\n');
-	for (i = 0; i < inputLines.length; i++) {
+	for (iterate1 = 0; iterate1 < inputLines.length; iterate1++) {
 		if (inputLines) {
-			let input = inputLines[i].split(' ');
+			let input = inputLines[iterate1].split(' ');
 			switch (input[0]) {
 				case 'CANCEL':
 					let str = `${input[1]} CANCEL_ACCEPTED`;
-					for (j = 0; j < registerEmp.length; j++) {
-						if (registerEmp[j].course == input[1].trim()) {
-							registerEmp[j].status = false;
+					for (iterate2 = 0; iterate2 < registerEmp.length; iterate2++) {
+						if (registerEmp[iterate2].course == input[1].trim()) {
+							registerEmp[iterate2].status = false;
 						}
 					}
 					console.log(str);
@@ -28,7 +28,7 @@ function main(dataInput) {
 						input[3],
 						parseInt(input[4]),
 						parseInt(input[5]),
-						i
+						iterate1
 					);
 					console.log(addCoursName);
 					break;
