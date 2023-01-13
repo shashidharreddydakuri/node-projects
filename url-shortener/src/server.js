@@ -16,12 +16,12 @@ MongoClient.connect(
 	{ useUnifiedTopology: true }
 )
 	.then((client) => {
-		app.locals.db = client.db('shortener');
+		app.locals.db = client.db('url-shortener');
 	})
 	.catch(() => console.error('Failed to connect to the database'));
 
 const shortenURL = (db, url) => {
-	const shortenedURLs = db.collection('shortenedURLs');
+	const shortenedURLs = db.collection('url-shortner');
 	return shortenedURLs.findOneAndUpdate(
 		{ original_url: url },
 		{
@@ -67,7 +67,7 @@ app.post('/new', (req, res) => {
 });
 const checkIfShortIdExists = (db, code) =>
 	db.collection('shortenedURLs').findOne({ short_id: code });
-    
+
 app.get('/:short_id', (req, res) => {
 	const shortId = req.params.short_id;
 
